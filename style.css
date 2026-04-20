@@ -142,10 +142,21 @@ header {
 }
 
 .contact-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   margin-bottom: 10px;
-  font-size: 32px;
-  line-height: 1;
-  color: #666;
+  border: 1px solid #111;
+  border-radius: 50%;
+  color: #111;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
 }
 
 .contact-email {
