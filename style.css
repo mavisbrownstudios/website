@@ -137,6 +137,33 @@ header {
   text-align: center;
 }
 
+.contact h2 {
+  margin-bottom: 14px;
+}
+
+.contact-label {
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 1;
+  color: #666;
+}
+
+.contact-email {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid #111;
+  border-radius: 999px;
+  color: #111;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-email:hover {
+  background: #111;
+  color: #fff;
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -249,19 +276,56 @@ footer {
    ABOUT SECTION
 ========================= */
 
+.back-home {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-home:hover {
+  background: white;
+  color: #111;
+}
+
+.subpage-logo {
+  display: block;
+  width: min(260px, 56vw);
+  height: auto;
+  margin: -18px auto 40px;
+}
+
 .about {
+  position: relative;
   background-color: #111;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  padding: 400px 100px;
+  padding: 180px 100px 140px;
 }
 
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.about-container,
+.connect-box,
+.services > h2,
+.shop > h2 {
+  position: relative;
+  z-index: 1;
 }
 
 .about h2 {
@@ -280,18 +344,20 @@ footer {
 ========================= */
 
 .connect-page {
+  position: relative;
   height: 100vh;
   background-color: #111;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   color: white;
-  padding: 100px;
+  padding: 72px 100px 100px;
 }
 
 .connect-box {
   max-width: 1000px;
+  margin-top: 28px;
 }
 
 .coneect-box h1 {
@@ -347,7 +413,8 @@ footer {
 ========================= */
 
 .services {
-  padding: 100px 10%;
+  position: relative;
+  padding: 72px 10% 100px;
   background-color: #111;
   color: white;
   text-align: center;
@@ -430,7 +497,8 @@ footer {
 }
 
 .shop {
-  padding: 100px 10%;
+  position: relative;
+  padding: 72px 10% 100px;
   background-color: #111;
   color: white;
   text-align: center;
@@ -477,4 +545,18 @@ footer {
 .photography p {
   font-size: 1.2rem;
   color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .back-home {
+    top: 18px;
+    left: 18px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .subpage-logo {
+    width: min(210px, 62vw);
+    margin: -8px auto 28px;
+  }
 }
