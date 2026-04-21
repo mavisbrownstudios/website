@@ -14,45 +14,63 @@ body {
   line-height: 1.0;
 }
 
+header {
+  padding: 24px 20px 10px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
 /* =========================
    LOGO (CENTERED)
 ========================= */
 .logo-container {
   text-align: center;
-  padding: 20px 0;
+  padding: 0 0 8px;
 }
 
-.logo {
-  font-size: 50px;
-  font-weight: bold;
+.logo-image {
+  display: inline-block;
+  width: min(380px, 78vw);
+  height: auto;
 }
 
 /* =========================
-   SIDE NAVIGATION (LEFT)
+   SIDE NAVIGATION
 ========================= */
 .side-nav {
-  position: absolute;
-  left: 20px;
-  top: 100px;
+  position: static;
+  margin-top: 0;
 }
 
 .side-nav ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .side-nav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 .side-nav ul li a {
+  display: inline-block;
+  padding: 10px 18px;
   text-decoration: none;
-  font-size: 20x;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #111;
-  transition: 0.3s;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 .side-nav ul li a:hover {
-  text-decoration: underline;
+  background: #111;
+  border-color: #111;
+  color: white;
 }
 
 /* =========================
@@ -119,6 +137,44 @@ body {
   text-align: center;
 }
 
+.contact h2 {
+  margin-bottom: 14px;
+}
+
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+  border: 1px solid #111;
+  border-radius: 50%;
+  color: #111;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.contact-email {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid #111;
+  border-radius: 999px;
+  color: #111;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-email:hover {
+  background: #111;
+  color: #fff;
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -142,8 +198,6 @@ footer {
   }
 
   .side-nav ul {
-    display: flex;
-    justify-content: center;
     gap: 15px;
   }
 
@@ -154,12 +208,16 @@ footer {
 
 /* MOBILE */
 @media (max-width: 600px) {
+  header {
+    padding: 20px 14px 10px;
+  }
+
   .hero h1 {
     font-size: 30px;
   }
 
-  .logo {
-    font-size: 26px;
+  .logo-image {
+    width: min(260px, 82vw);
   }
 
   .grid {
@@ -167,7 +225,12 @@ footer {
   }
 
   .side-nav ul {
-    flex-direction: column;
+    gap: 10px;
+  }
+
+  .side-nav ul li a {
+    padding: 9px 14px;
+    font-size: 14px;
   }
 }
 
@@ -177,7 +240,7 @@ footer {
 ========================= */
 
 .hero {
-  padding: 150px 50px;
+  padding: 56px 50px 150px;
   text-align: center;
 }
 
@@ -224,19 +287,56 @@ footer {
    ABOUT SECTION
 ========================= */
 
+.back-home {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-home:hover {
+  background: white;
+  color: #111;
+}
+
+.subpage-logo {
+  display: block;
+  width: min(260px, 56vw);
+  height: auto;
+  margin: -18px auto 40px;
+}
+
 .about {
+  position: relative;
   background-color: #111;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  padding: 400px 100px;
+  padding: 180px 100px 140px;
 }
 
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.about-container,
+.connect-box,
+.services > h2,
+.shop > h2 {
+  position: relative;
+  z-index: 1;
 }
 
 .about h2 {
@@ -255,18 +355,20 @@ footer {
 ========================= */
 
 .connect-page {
+  position: relative;
   height: 100vh;
   background-color: #111;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   color: white;
-  padding: 100px;
+  padding: 72px 100px 100px;
 }
 
 .connect-box {
   max-width: 1000px;
+  margin-top: 28px;
 }
 
 .coneect-box h1 {
@@ -322,7 +424,8 @@ footer {
 ========================= */
 
 .services {
-  padding: 100px 10%;
+  position: relative;
+  padding: 72px 10% 100px;
   background-color: #111;
   color: white;
   text-align: center;
@@ -405,7 +508,8 @@ footer {
 }
 
 .shop {
-  padding: 100px 10%;
+  position: relative;
+  padding: 72px 10% 100px;
   background-color: #111;
   color: white;
   text-align: center;
@@ -452,4 +556,18 @@ footer {
 .photography p {
   font-size: 1.2rem;
   color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .back-home {
+    top: 18px;
+    left: 18px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .subpage-logo {
+    width: min(210px, 62vw);
+    margin: -8px auto 28px;
+  }
 }
